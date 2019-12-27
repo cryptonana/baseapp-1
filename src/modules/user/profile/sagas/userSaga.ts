@@ -15,7 +15,7 @@ const userOptions = (csrfToken?: string): RequestOptions => {
 
 export function* getCsrfToken() {
     try {
-        const csrfToken = sessionStorage.getItem('csrfToken');
+        const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content');
         return csrfToken;
     } catch (error) {
       return undefined;
